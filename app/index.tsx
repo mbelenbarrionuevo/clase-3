@@ -16,7 +16,7 @@ export default function Index() {
       style={{
         flex: 1,
         justifyContent: "flex",
-        alignItems: "center",
+        alignItems: "flex",
       }}
     >
       <Text>Contador: {contador} </Text>
