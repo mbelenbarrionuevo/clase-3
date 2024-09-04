@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
-import Card from './Card';  // Asegúrate de que la ruta sea correcta
+import Card from './card';  
 
 const App = () => {
     const data = ['Tarjeta 1', 'Tarjeta 2', 'Tarjeta 3'];
