@@ -1,32 +1,26 @@
-import { Pressable, Text, View} from "react-native";
-import { useState} from "react";
+import React from 'react';
+import { View, StyleSheet } from 'react-native';
+import Card from './Card';  // Asegúrate de que la ruta sea correcta
 
+const App = () => {
+    const data = ['Tarjeta 1', 'Tarjeta 2', 'Tarjeta 3'];
 
-export default function Index() {
-  const [contador, setContador] = useState(0);
-  const incrementar = () => {
-    setContador(prev => prev + 1);
-  }
-  const decrementar = () => {
-    setContador(prev => prev - 1);
-  }
+    return (
+        <View style={styles.container}>
+            {data.map((item, index) => (
+                <Card key={index} text={item} />
+            ))}
+        </View>
+    );
+};
 
-  return (
-    <View
-      style={{
+const styles = StyleSheet.create({
+    container: {
         flex: 1,
-        justifyContent: "flex",
-        alignItems: "flex",
-      }}
-    >
-      <Text>Contador: {contador} </Text>
-      <Pressable onPress={incrementar} style= {{padding: 10, backgroundColor: 'purple', margin: 20}}>
-        <Text> Incrementar </Text>
-      </Pressable>
-      <Pressable onPress={decrementar} style= {{padding: 10, backgroundColor: 'green', margin: 20}}>
-        <Text> Decrementar </Text>
-      </Pressable>
+        justifyContent: 'center',
+        alignItems: 'center',
+        padding: 20,
+    },
+});
 
-    </View>
-  );
-}
+export default App;
